@@ -223,7 +223,7 @@ const PROFILES: Record<string, string> = {
   iso15008: "ISO 15008 (in-car accessibility)",
   adobefonts: "Adobe Fonts",
   fontbureau: "Font Bureau",
-  // typenetwork: "Type Network",
+  typenetwork: "Type Network",
   fontwerk: "Fontwerk",
   microsoft: "Microsoft",
 };

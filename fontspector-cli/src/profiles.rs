@@ -2,10 +2,12 @@
 use fontbakery_bridge::FontbakeryBridge;
 
 use fontspector_checkapi::{Plugin, Profile, Registry};
+use profile_adobe::Adobe;
 use profile_fontwerk::Fontwerk;
 use profile_googlefonts::GoogleFonts;
 use profile_iso15008::Iso15008;
 use profile_opentype::OpenType;
+use profile_typenetwork::TypeNetwork;
 use profile_universal::Universal;
 use std::io::Read;
 use std::path::PathBuf;
@@ -91,6 +93,16 @@ pub(crate) fn register_core_profiles(args: &Args, registry: &mut Registry<'stati
     Fontwerk
         .register(registry)
         .expect("Couldn't register fontwerk profile, fontspector bug");
+    
+    #[allow(clippy::expect_used)] // If this fails, I *want* to panic
+    Adobe
+        .register(registry)
+        .expect("Couldn't register adobe profile, fontspector bug");
+
+    #[allow(clippy::expect_used)] // If this fails, I *want* to panic
+    TypeNetwork
+        .register(registry)
+        .expect("Couldn't register typenetwork profile, fontspector bug");
 }
 
 #[cfg(feature = "python")]

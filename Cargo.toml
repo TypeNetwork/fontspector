@@ -13,6 +13,7 @@ members = [
     "profile-opentype",
     "profile-universal",
     "profile-testplugin",
+    "profile-typenetwork",
     "profile-googlefonts",
     "fontspector-web",
     "fontbakery-bridge",

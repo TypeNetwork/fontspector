@@ -15,6 +15,7 @@ use profile_googlefonts::GoogleFonts;
 use profile_iso15008::Iso15008;
 use profile_microsoft::Microsoft;
 use profile_opentype::OpenType;
+use profile_typenetwork::TypeNetwork;
 use profile_universal::Universal;
 
 // #[wasm_bindgen]

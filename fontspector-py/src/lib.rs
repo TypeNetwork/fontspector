@@ -5,10 +5,12 @@ use fontspector_checkapi::{
     CheckImplementation, Context, Plugin, Registry, StatusCode, Testable, TestableCollection,
     TestableType,
 };
+use profile_adobe::Adobe;
 use profile_fontwerk::Fontwerk;
 use profile_googlefonts::GoogleFonts;
 use profile_opentype::OpenType;
 use profile_universal::Universal;
+use profile_typenetwork::TypeNetwork;
 use pyo3::{
     exceptions::PyValueError,
     prelude::*,
@@ -79,6 +81,9 @@ impl CheckTester {
         })?;
         Fontwerk.register(&mut registry).map_err(|_| {
             PyValueError::new_err("Couldn't register Fontwerk profile, fontspector bug")
+        })?;
+        TypeNetwork.register(&mut registry).map_err(|_| {
+            PyValueError::new_err("Couldn't register TypeNetwork profile, fontspector bug")
         })?;
 
         let check = registry
@@ -184,6 +189,9 @@ fn registered_checks() -> PyResult<Vec<String>> {
     })?;
     Fontwerk.register(&mut registry).map_err(|_| {
         PyValueError::new_err("Couldn't register Fontwerk profile, fontspector bug")
+    })?;
+    TypeNetwork.register(&mut registry).map_err(|_| {
+        PyValueError::new_err("Couldn't register TypeNetwork profile, fontspector bug")
     })?;
     Ok(registry.checks.keys().cloned().collect())
 }
