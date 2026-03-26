@@ -1532,10 +1532,12 @@ dependencies = [
  "fontir",
  "fontspector-checkapi",
  "fontspector-fontbakery-bridge",
+ "fontspector-profile-adobe",
  "fontspector-profile-fontwerk",
  "fontspector-profile-googlefonts",
  "fontspector-profile-iso15008",
  "fontspector-profile-opentype",
+ "fontspector-profile-typenetwork",
  "fontspector-profile-universal",
  "glyphs2fontir",
  "homedir",
@@ -1720,6 +1722,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "fontspector-profile-typenetwork"
+version = "1.0.0"
+dependencies = [
+ "fontations",
+ "fontspector-checkapi",
+ "itertools 0.14.0",
+ "pluginator",
+ "regex",
+ "serde_json",
+]
+
+[[package]]
 name = "fontspector-profile-universal"
 version = "1.4.0"
 dependencies = [
@@ -1747,10 +1761,12 @@ name = "fontspector-py"
 version = "0.1.0"
 dependencies = [
  "fontspector-checkapi",
+ "fontspector-profile-adobe",
  "fontspector-profile-fontwerk",
  "fontspector-profile-googlefonts",
  "fontspector-profile-iso15008",
  "fontspector-profile-opentype",
+ "fontspector-profile-typenetwork",
  "fontspector-profile-universal",
  "pyo3",
  "pythonize",
@@ -1769,6 +1785,7 @@ dependencies = [
  "fontspector-profile-iso15008",
  "fontspector-profile-microsoft",
  "fontspector-profile-opentype",
+ "fontspector-profile-typenetwork",
  "fontspector-profile-universal",
  "js-sys",
  "serde_json",
